@@ -80,11 +80,6 @@
   <span class="value estado-activo">Activo</span>
 </div>
 
-<div class="field">
-  <span class="label">Fecha y hora de visita:</span>
-  <span class="value" id="fecha-visita">Cargando...</span>
-</div>
-
     <div class="field">
       <span class="label">Fecha de registro:</span>
       <span class="value">2026-09-16</span>
@@ -96,9 +91,9 @@
     </div>
 
     <div class="field">
-      <span class="label">Fecha de validación:</span>
-      <span class="value">2026-09-17 14:42</span>
-    </div>
+  <span class="label">Fecha de validación:</span>
+  <span class="value" id="fecha-validacion">Cargando...</span>
+</div>
 
   </main>
 
@@ -134,9 +129,9 @@
 
   </footer>
 <script>
-  const campoFecha = document.getElementById('fecha-visita');
+  const campoValidacion = document.getElementById('fecha-validacion');
 
-  function actualizarFechaHora() {
+  function actualizarFechaValidacion() {
     const ahora = new Date();
 
     const anio = ahora.getFullYear();
@@ -146,12 +141,12 @@
     const minutos = String(ahora.getMinutes()).padStart(2, '0');
     const segundos = String(ahora.getSeconds()).padStart(2, '0');
 
-    campoFecha.textContent =
+    campoValidacion.textContent =
       `${anio}/${mes}/${dia} ${horas}:${minutos}:${segundos}`;
   }
 
-  actualizarFechaHora();
-  setInterval(actualizarFechaHora, 1000);
+  actualizarFechaValidacion();
+  setInterval(actualizarFechaValidacion, 1000);
 </script>
 
 </body>
